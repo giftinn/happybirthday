@@ -557,18 +557,15 @@ p {
                 }, 500);
             }
         }
-        
-
-        
-        // Initialize
+ 
+       // Initialize
         function init() {
             // Event listeners
             nextBtn1.addEventListener('click', () => navigateTo(1)); // nextBtn1 -> page 2
             noBtn.addEventListener('click', () => navigateTo(2));   // noBtn -> page 3
-            openBtn.addEventListener('click', () => navigateTo(3)); // kalau masih dipakai
             againBtn.addEventListener('click', () => navigateTo(3)); // againBtn -> page 4
             restartBtn.addEventListener('click', () => navigateTo(0));
-                    
+            
             // Audio toggle
             let isMusicPlaying = false;
             
