@@ -470,15 +470,12 @@ p {
     
     <script>
         // DOM elements
-        const pages = document.querySelectorAll('.page');
-        const nextBtn1 = document.getElementById('nextBtn1');
-        const openBtn = document.getElementById('openBtn');
-        const noBtn = document.getElementById('noBtn');
-        const againBtn = document.getElementById('againBtn');
-        const restartBtn = document.getElementById('restartBtn');
-        const audioBtn = document.getElementById('audioBtn');
-        const bgMusic = document.getElementById('bgMusic');
-        const heartsContainer = document.getElementById('hearts');
+            const pages = document.querySelectorAll('.page');
+            const nextBtn1 = document.getElementById('nextBtn1');   // page 0 -> 1
+            const openBtn = document.getElementById('openBtn');     // page 2 -> 3
+            const noBtn = document.getElementById('noBtn');         // page 1 -> 2
+            const againBtn = document.getElementById('againBtn');   // page 3 -> 4
+            const restartBtn = document.getElementById('restartBtn');
         
         // Button audio effect - Cute pop sound
         function playButtonSound() {
@@ -558,16 +555,17 @@ p {
             }
         }
         
-
-        
-        // Initialize
-        function init() {
-            // Event listeners
-            const nextBtn1 = document.getElementById('nextBtn1');   // page 0 -> 1
-            const openBtn = document.getElementById('openBtn');     // page 2 -> 3
-            const noBtn = document.getElementById('noBtn');         // page 1 -> 2
-            const againBtn = document.getElementById('againBtn');   // page 3 -> 4
-            const restartBtn = document.getElementById('restartBtn');
+           
+            function init() {
+                nextBtn1.addEventListener('click', () => navigateTo(1));
+                noBtn.addEventListener('click', () => navigateTo(2));
+                openBtn.addEventListener('click', () => navigateTo(3));
+            
+                // BUTTON DI PAGE 3 → LANJUT KE PAGE 4
+                againBtn.addEventListener('click', () => navigateTo(4));
+            
+                restartBtn.addEventListener('click', () => navigateTo(0));
+            }
             
             // Audio toggle
             let isMusicPlaying = false;
